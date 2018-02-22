@@ -54,8 +54,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let latitude = locationManager.location?.coordinate.latitude
         let longitude = locationManager.location?.coordinate.longitude
-        latLongLabel.text = "latitude: \(latitude) \n longitude: \(longitude)"
-    
+        latLongLabel.text = "latitude: \(latitude) \n longitude: \(longitude))"
+        latLongLabel.isHidden = true
+        
+        //reverse geo-coding
+        
+        let geocoder = CLGeocoder()
+       geocoder.reverseGeocodeLocation(locationManager.location!, completionHandler: { ( placemarks, error) in
+            if error == nil {
+                let firstLocation = placemarks?[0]
+                if let locality = firstLocation?.locality {
+                    if let country = firstLocation?.country {
+                        self.locationDetailsLabel.text = "\(locality) \n \(country)"
+                    }
+                } else {
+                    self.locationDetailsLabel.text = "Location details not found"
+                }
+            }
+            else {
+                if let error = error {
+                    print("Error with reverse geo-coding \n \(error)")
+                }
+            }
+        })
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

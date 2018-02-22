@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 class onboardingViewController: UIViewController{
-    
-    @IBOutlet weak var courseTextBox1: UITextField!
-    @IBOutlet weak var courseTextBox2: UITextField!
-    @IBOutlet weak var courseTextBox3: UITextField!
-    @IBOutlet weak var courseTextBox4: UITextField!
    
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var slider: UISlider!

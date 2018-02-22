@@ -41,10 +41,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Could we find your location?</string>
+	<key>Privacy - Location Always and In Use Usage Description</key>
+	<string>Location bruh</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 </dict>
